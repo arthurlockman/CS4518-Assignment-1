@@ -22,4 +22,6 @@
     <string name="starting_name_1">Team 1</string>
     <string name="starting_name_2">Team 2</string>
     <string name="toast_greeting">Thank you for using CourtCounter!</string>
+    <string name="send_email">Send Scores</string>
+    <string name="toast_email_error">Error sending email.</string>
 </resources>

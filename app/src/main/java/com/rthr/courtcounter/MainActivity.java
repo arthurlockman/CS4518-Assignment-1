@@ -16,6 +16,7 @@
 package com.rthr.courtcounter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -186,6 +187,42 @@ public class MainActivity extends AppCompatActivity
         scoreTeamB = 0;
         displayForTeamA(scoreTeamA);
         displayForTeamB(scoreTeamB);
+    }
+
+    /**
+     * Sends scores using the built-in email client.
+     * @param v The view context.
+     */
+    public void sendScoresViaEmail(View v)
+    {
+        //Build message
+        String winner = "Winning Team: ";
+        if (scoreTeamA > scoreTeamB)
+            winner = winner + getTeamAName();
+        else if (scoreTeamB > scoreTeamA)
+            winner = winner + getTeamBName();
+        else if (scoreTeamB == scoreTeamA)
+            winner = winner + "Tie!";
+        String teamAScore = "Team A: " + getTeamAName() + " has: " + scoreTeamA;
+        String teamBScore = "Team B: " + getTeamBName() + " has: " + scoreTeamB;
+        String message = winner + "\n" + teamAScore + "\n" + teamBScore;
+        //Send mail
+        Intent i = new Intent(Intent.ACTION_SEND);
+        i.setType("message/rfc822");
+        i.putExtra(Intent.EXTRA_TEXT, message);
+        i.putExtra(Intent.EXTRA_SUBJECT, "CourtCounter Score Report");
+        i.addFlags(Intent.FLAG_ACTIVITY_FORWARD_RESULT);
+        try
+        {
+            startActivity(i);
+        } catch (android.content.ActivityNotFoundException ex)
+        {
+            Context context = getApplicationContext();
+            CharSequence text = getString(R.string.toast_email_error);
+            int duration = Toast.LENGTH_SHORT;
+            Toast toast = Toast.makeText(context, text, duration);
+            toast.show();
+        }
     }
 
     /**

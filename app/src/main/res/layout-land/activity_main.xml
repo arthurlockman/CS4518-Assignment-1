@@ -27,7 +27,8 @@
         android:orientation="horizontal"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
+        android:layout_alignParentStart="true"
+        android:id="@+id/mainLayout">
 
         <View
             android:layout_height="match_parent"
@@ -172,13 +173,33 @@
         </LinearLayout>
     </LinearLayout>
 
-    <Button
+    <GridLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="13dp"
-        android:onClick="resetScore"
-        android:text="@string/reset"
+        android:orientation="horizontal"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="0dp">
+
+        <Button
+            android:layout_height="wrap_content"
+            android:onClick="resetScore"
+            android:text="@string/reset"
+            android:layout_below="@+id/linearLayout"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="32dp"
+            android:id="@+id/resetButton"
+            android:layout_width="200dp" />
+
+        <Button
+            android:layout_height="wrap_content"
+            android:text="@string/send_email"
+            android:layout_below="@+id/linearLayout"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="32dp"
+            android:id="@+id/emailButton"
+            android:layout_width="200dp"
+            android:onClick="sendScoresViaEmail" />
+    </GridLayout>
 
 </RelativeLayout>

@@ -9,4 +9,5 @@
     <string name="starting_name_1">Equipo 1</string>
     <string name="starting_name_2">Equipo 2</string>
     <string name="toast_greeting">Gracias por usar CourtCounter!</string>
+    <string name="send_email">Se ha producido un error de envío de correo electrónico</string>
 </resources>
