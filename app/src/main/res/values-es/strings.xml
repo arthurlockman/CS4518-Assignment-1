@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Court Counter</string>
+    <string name="action_settings">Ajustes</string>
+    <string name="three_points">+3 Puntos</string>
+    <string name="two_points">+2 Puntos</string>
+    <string name="free_throw">Tiro Libre</string>
+    <string name="reset">Reiniciar</string>
+    <string name="starting_name_1">Equipo 1</string>
+    <string name="starting_name_2">Equipo 2</string>
+    <string name="toast_greeting">Gracias por usar CourtCounter!</string>
+</resources>

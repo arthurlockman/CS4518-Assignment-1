@@ -21,15 +21,6 @@
     android:layout_height="match_parent"
     tools:context="com.rthr.courtcounter.MainActivity">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="32dp"
-        android:onClick="resetScore"
-        android:text="@string/reset" />
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -37,6 +28,12 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true">
+
+        <View
+            android:layout_height="match_parent"
+            android:layout_marginTop="16dp"
+            android:background="@android:color/darker_gray"
+            android:layout_width="1dp" />
 
         <LinearLayout
             android:layout_width="0dp"
@@ -49,33 +46,33 @@
                 android:layout_width="match_parent"
                 android:layout_height="75dp">
 
+                <ImageView
+                    android:layout_height="match_parent"
+                    app:srcCompat="@drawable/dog"
+                    android:id="@+id/imageView"
+                    android:layout_width="100dp" />
+
                 <EditText
                     android:layout_height="match_parent"
-                    android:inputType="textPersonName"
+                    android:inputType="textCapWords"
                     android:text="@string/starting_name_1"
                     android:ems="10"
                     android:id="@+id/teamAName"
                     android:textAlignment="center"
                     android:textSize="14sp"
-                    android:layout_width="105dp" />
+                    android:layout_width="100dp" />
 
-                <ImageView
+                <TextView
+                    android:id="@+id/team_a_score"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/dog"
-                    android:id="@+id/imageView" />
+                    android:layout_height="match_parent"
+                    android:fontFamily="sans-serif-light"
+                    android:gravity="center"
+                    android:paddingBottom="24dp"
+                    android:text="0"
+                    android:textColor="#000000"
+                    android:textSize="45sp" />
             </LinearLayout>
-
-            <TextView
-                android:id="@+id/team_a_score"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="sans-serif-light"
-                android:gravity="center"
-                android:paddingBottom="24dp"
-                android:text="0"
-                android:textColor="#000000"
-                android:textSize="56sp" />
 
             <Button
                 android:layout_width="match_parent"
@@ -106,12 +103,6 @@
 
         </LinearLayout>
 
-        <View
-            android:layout_height="match_parent"
-            android:layout_marginTop="16dp"
-            android:background="@android:color/darker_gray"
-            android:layout_width="1dp" />
-
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -123,34 +114,33 @@
                 android:layout_width="match_parent"
                 android:layout_height="75dp">
 
+                <ImageView
+                    android:layout_height="70dp"
+                    app:srcCompat="@drawable/cat"
+                    android:id="@+id/imageView2"
+                    android:layout_width="100dp" />
+
                 <EditText
                     android:layout_height="match_parent"
-                    android:inputType="textPersonName"
+                    android:inputType="textCapWords"
                     android:text="@string/starting_name_2"
                     android:ems="10"
                     android:id="@+id/teamBName"
                     android:fontFamily="sans-serif"
                     android:textSize="14sp"
-                    android:layout_width="105dp" />
+                    android:layout_width="100dp" />
 
-                <ImageView
-                    android:layout_width="wrap_content"
+                <TextView
+                    android:id="@+id/team_b_score"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/cat"
-                    android:id="@+id/imageView2"
-                    android:layout_weight="1" />
+                    android:fontFamily="sans-serif-light"
+                    android:gravity="center"
+                    android:paddingBottom="24dp"
+                    android:text="0"
+                    android:textColor="#000000"
+                    android:textSize="45sp" />
             </LinearLayout>
-
-            <TextView
-                android:id="@+id/team_b_score"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="sans-serif-light"
-                android:gravity="center"
-                android:paddingBottom="24dp"
-                android:text="0"
-                android:textColor="#000000"
-                android:textSize="56sp" />
 
             <Button
                 android:layout_width="match_parent"
@@ -181,5 +171,14 @@
 
         </LinearLayout>
     </LinearLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="13dp"
+        android:onClick="resetScore"
+        android:text="@string/reset"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
